@@ -30,3 +30,13 @@ tasks.register("karateRun", Exec::class) {
     description = "Run Karate tests and generate HTML report"
     commandLine("java", "-jar", "karate.jar", "src/test/java")
 }
+// Print Cucumber test results to console
+tasks.test {
+    // Print Karate test results to console after the test execution
+    val reportFile = file("target/surefire-reports/karate-summary.json")
+    if (reportFile.exists()) {
+        val jsonContent = reportFile.readText()
+        println("Karate Test Results:")
+        println(jsonContent)
+    }
+}
