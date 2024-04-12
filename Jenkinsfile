@@ -14,14 +14,7 @@ pipeline {
                 sh './gradlew test'
             }
         }
-        stage('Deploy to Server') {
-                    steps {
-                        script {
-                                    // Copier le fichier de rapport Karate vers le serveur via SSH (port 2222 pour le conteneur Docker)
-                                    sh 'scp -P 2222 chemin/vers/rapport-karate.html root@localhost:/chemin/destination/'
-                                }
-                    }
-                }
+
     }
 
 }
