@@ -1,12 +1,21 @@
 pipeline {
     agent any
-    stages {
-        stage('Test') {
-            steps {
-                sh 'chmod +x gradlew'
-                sh './gradlew test'
+            stage('Permission') {
+                steps {
+                    sh 'chmod +x gradlew'
+                }
             }
-        }
-    }
+
+            stage('Build') {
+                steps {
+                    sh './gradlew clean build'
+                }
+            }
+
+            stage('Test') {
+                steps {
+                    sh './gradlew test'
+                }
+            }
 }
 
