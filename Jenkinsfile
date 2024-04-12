@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh './gradlew test'
+                bat 'cmd /c gradlew test' // Pour les systèmes Windows
             }
         }
     }
 }
-
