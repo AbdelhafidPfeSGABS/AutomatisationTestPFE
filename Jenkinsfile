@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Étape pour récupérer le code source depuis Git
-                git 'https://github.com/AbdelhafidPfeSGABS/AutomatisationTestPFE.git'
+                git 'https://github.com/AbdelhafidPfeSGABS/AutomatisationTestPFE/tree/main'
             }
         }
 
