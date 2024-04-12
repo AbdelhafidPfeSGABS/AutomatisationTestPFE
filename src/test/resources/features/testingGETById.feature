@@ -4,7 +4,7 @@ Feature: Testing API GETById
 
     Given url 'https://reqres.in/api/users/2'
     When method GET
-    Then status 20
+    Then status 200
 
     And print response
     And print responseStatus
